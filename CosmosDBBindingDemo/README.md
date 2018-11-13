@@ -2,7 +2,7 @@
 
 A set of Azure functions that demonstrate how to bind a Function to Azure CosmosDB.
 
-For a detailed explanation, see [davidgiard.com](http://davidgiard.com)
+See [this article](http://davidgiard.com/2018/11/21/CosmosDBBindingInAzureFunctions.aspx) For a detailed explanation of each function.
 
 ## Functions
 
