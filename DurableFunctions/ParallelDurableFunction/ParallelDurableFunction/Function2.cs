@@ -8,19 +8,19 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace SequentialDurableFunctionDemo
+namespace ParallelDurableFunction
 {
-    public static class Function3
+    public static class Function2
     {
-        [FunctionName("Function3")]
+        [FunctionName("Function2")]
         public static async Task<string> Run(
             [ActivityTrigger] string msg,
             ILogger log)
         {
-            log.LogWarning("This is Function 3");
+            log.LogWarning("This is Function 2");
 
             await Task.Delay(10000);
-            msg += "\n\rFunction3 done; ";
+            msg += "Function2 done; ";
             return msg;
         }
     }

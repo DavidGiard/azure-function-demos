@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace SequentialDurableFunctionDemo
+namespace ParallelDurableFunction
 {
     public static class Function3
     {
@@ -20,7 +20,7 @@ namespace SequentialDurableFunctionDemo
             log.LogWarning("This is Function 3");
 
             await Task.Delay(10000);
-            msg += "\n\rFunction3 done; ";
+            msg += "Function3 done; ";
             return msg;
         }
     }

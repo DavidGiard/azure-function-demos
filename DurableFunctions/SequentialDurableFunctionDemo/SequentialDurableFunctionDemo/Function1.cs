@@ -20,7 +20,7 @@ namespace SequentialDurableFunctionDemo
             log.LogWarning("This is Function 1");
 
             await Task.Delay(10000);
-            msg += "Function1 done; ";
+            msg += "\n\rFunction1 done; ";
             return msg;
         }
     }
