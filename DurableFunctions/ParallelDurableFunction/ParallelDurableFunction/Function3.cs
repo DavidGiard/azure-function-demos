@@ -18,9 +18,9 @@ namespace ParallelDurableFunction
             ILogger log)
         {
             log.LogWarning("This is Function 3");
-
-            await Task.Delay(10000);
-            msg += "Function3 done; ";
+            await Task.Delay(5000);
+            log.LogWarning("Function 3 completed");
+            msg += "Function 3";
             return msg;
         }
     }

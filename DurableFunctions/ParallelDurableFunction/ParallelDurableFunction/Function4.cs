@@ -10,17 +10,18 @@ using Newtonsoft.Json;
 
 namespace ParallelDurableFunction
 {
-    public static class Function1
+    public static class Function4
     {
-        [FunctionName("Function1")]
+        [FunctionName("Function4")]
         public static async Task<string> Run(
             [ActivityTrigger] string msg,
             ILogger log)
         {
-            log.LogWarning("This is Function 1");
-            await Task.Delay(15000);
-            log.LogWarning("Function 1 completed");
-            msg += "Function 1";
+            log.LogWarning("This is Function 4");
+            int secondsDelay = new Random().Next(8, 12);
+            await Task.Delay(1000);
+            log.LogInformation("Function 4 completed");
+            msg += "\n\rFunction 4";
             return msg;
         }
     }

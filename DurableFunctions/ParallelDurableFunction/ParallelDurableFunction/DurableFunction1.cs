@@ -13,8 +13,6 @@ namespace ParallelDurableFunction
             [OrchestrationTrigger] DurableOrchestrationContext ctx,
             ILogger log)
         {
-
-
             var msg = "Durable Function: ";
             var parallelTasks = new List<Task<string>>();
             Task<string> task1 = ctx.CallActivityAsync<string>("Function1", msg);
@@ -30,11 +28,12 @@ namespace ParallelDurableFunction
             msg = task1.Result + "\n\r" + task2.Result + "\n\r" + task3.Result;
 
             // Use LogWarning, so it shows up in Yelow, making it easier to spot
-            log.LogWarning($"All 3 Activity functions completed for orchestragion {ctx.InstanceId}!");
+            log.LogWarning($"All 3 Activity functions completed for orchestration {ctx.InstanceId}!");
+
+            msg = await ctx.CallActivityAsync<string>("Function4", msg);
             log.LogWarning(msg);
 
             return new OkObjectResult(msg);
-
         }
     }
 }
