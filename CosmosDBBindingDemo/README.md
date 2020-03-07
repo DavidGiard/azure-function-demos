@@ -16,11 +16,11 @@ Retrieve all documents from a CosmosDB collection
 
 ### GetItemById
 
-Retreive a single document from a CosmosDB collection, given the document's ID
+Retrieve a single document from a CosmosDB collection, given the document's ID
 
 ### GetCompleteItems
 
-Retreive a set of document from a CosmosDB collection, based on a query
+Retrieve a set of document from a CosmosDB collection, based on a query
 
 ## Setup
 
@@ -30,11 +30,13 @@ To run this project, you must first
 2. Add a "ToDoList" database and "Items" collection to CosmosDb (You can do this from the CosmosDb "Quick start" blade)
 3. Copy the CosmosDB connection string
 4. Add a local.settings.json to this Visual Studio project, similar to the following:
+
+```
     {
         "IsEncrypted": false,
-    "Values": {
-        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-        "CosmosDBConnection": "ADD-CONNECTION-STRING-HERE",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-    }
+        "Values": {
+            "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+            "CosmosDBConnection": "ADD-CONNECTION-STRING-HERE",
+            "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+            }
     }
