@@ -8,19 +8,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace SequentialDurableFunctionDemo
+namespace ParallelDurableFunction
 {
-    public static class Function2
+    public static class Function4
     {
-        [FunctionName("Function2")]
+        [FunctionName("Function4")]
         public static async Task<string> Run(
             [ActivityTrigger] string msg,
             ILogger log)
         {
-            log.LogWarning("This is Function 2");
-
-            await Task.Delay(5000);
-            msg += "\n\rFunction2 done; ";
+            log.LogWarning("This is Function 4");
+            int secondsDelay = new Random().Next(8, 12);
+            await Task.Delay(1000);
+            log.LogInformation("Function 4 completed");
+            msg += "\n\rFunction 4";
             return msg;
         }
     }

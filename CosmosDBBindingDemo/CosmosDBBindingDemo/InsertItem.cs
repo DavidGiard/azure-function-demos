@@ -23,7 +23,7 @@ namespace CosmosDBBindingDemo
             string jsonContent = content.ReadAsStringAsync().Result;
             document = JsonConvert.DeserializeObject<ToDoItem>(jsonContent);
 
-            log.LogInformation($"C# Queue trigger function inserted one row");
+            log.LogInformation($"Function inserted one row");
 
             return new HttpResponseMessage(HttpStatusCode.Created);
         }

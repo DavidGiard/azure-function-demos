@@ -16,7 +16,7 @@ namespace SequentialDurableFunctionDemo
             [OrchestrationTrigger] DurableOrchestrationContext ctx,
             ILogger log)
         {
-            var msg = "Durable Function: ";
+            var msg = "\n\rDurable Function: ";
             msg = await ctx.CallActivityAsync<string>("Function1", msg);
             msg = await ctx.CallActivityAsync<string>("Function2", msg);
             msg = await ctx.CallActivityAsync<string>("Function3", msg);

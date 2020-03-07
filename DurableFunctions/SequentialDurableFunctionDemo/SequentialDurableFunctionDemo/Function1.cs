@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace SequentialDurableFunctionDemo
 {
-    public static class Function1
+    public static class Function11111
     {
         [FunctionName("Function1")]
         public static async Task<string> Run(
@@ -19,7 +19,7 @@ namespace SequentialDurableFunctionDemo
         {
             log.LogWarning("This is Function 1");
 
-            await Task.Delay(10000);
+            await Task.Delay(5000);
             msg += "\n\rFunction1 done; ";
             return msg;
         }

@@ -18,7 +18,7 @@ namespace ParallelDurableFunction
             ILogger log)
         {
             log.LogWarning("This is Function 4");
-            int secondsDelay = new Random().Next(8, 12);
+            //int secondsDelay = new Random().Next(8, 12);
             await Task.Delay(1000);
             log.LogInformation("Function 4 completed");
             msg += "\n\rFunction 4";

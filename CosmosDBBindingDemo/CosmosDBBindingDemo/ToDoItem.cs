@@ -12,5 +12,9 @@ namespace CosmosDBBindingDemo
 
         [JsonProperty("isComplete")]
         public bool IsComplete { get; set; }
+
+        [JsonProperty("user")]
+        public string User { get; set; }
+
     }
 }
